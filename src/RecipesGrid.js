@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     padding: theme.spacing(2),
     margin: "auto",
-    maxWidth: 500,
+    maxWidth: 600,
   },
   image: {
     width: 128,
@@ -32,6 +32,7 @@ const RecipesGrid = ({
   totalTime,
   source,
   totalWeight,
+  dietLabels,
 }) => {
   const classes = useStyles();
   return (
@@ -43,29 +44,32 @@ const RecipesGrid = ({
               <img className={classes.img} alt="complex" src={image} />
             </ButtonBase>
           </Grid>
-          <Grid item xs={12} sm container>
-            <Grid item xs container direction="column" spacing={2}>
-              <Grid item xs>
-                <Typography variant="body2" gutterBottom>
-                  {label}
-                </Typography>
-                <Typography gutterBottom variant="subtitle1">
-                  Source: {source}
-                </Typography>
-              </Grid>
-            </Grid>
+
+          <Grid item xs container direction="column" spacing={2}>
             <Grid item>
-              <Typography variant="subtitle1">Calories {calories} </Typography>
-
-              <Typography variant="body2" color="subtitle1">
-                Total Weight {totalWeight}
+              <Typography variant="h6" gutterBottom>
+                {label}
               </Typography>
+              <Typography gutterBottom variant="subtitle1">
+                Source: {source}
+              </Typography>
+              <Typography variant="subtitle1">
+                Diet Labels: {dietLabels}
+              </Typography>
+            </Grid>
+          </Grid>
 
-              <Grid item>
-                <Typography variant="body2" color="textSecondary">
-                  Total Time: {totalTime}
-                </Typography>
-              </Grid>
+          <Grid item xs container direction="column" spacing={2}>
+            <Grid item>
+              <Typography variant="subtitle1" gutterBottom>
+                Calories: {calories}
+              </Typography>
+              <Typography gutterBottom variant="subtitle1">
+                Total Weight: {totalWeight}
+              </Typography>
+              <Typography variant="subtitle1">
+                Total Time: {totalTime}
+              </Typography>
             </Grid>
           </Grid>
         </Grid>
