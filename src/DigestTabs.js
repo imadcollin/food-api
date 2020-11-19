@@ -6,20 +6,8 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import StickyHeadTable from "./Ingredients";
-const useStyles = makeStyles((theme) => ({
-  root: {
-    width: "100%",
-    display: "block",
-  },
-  heading: {
-    fontSize: theme.typography.pxToRem(15),
-    fontWeight: theme.typography.fontWeightRegular,
-  },
-}));
 
 const DigestScrollTabs = (digest) => {
-  const classes = useStyles();
-
   return (
     <div>
       <Accordion>
@@ -28,7 +16,7 @@ const DigestScrollTabs = (digest) => {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography className={classes.heading}>Digest Table</Typography>
+          <Typography>Digest Table</Typography>
         </AccordionSummary>
         <AccordionDetails style={{ display: "block" }}>
           <Typography>
@@ -42,10 +30,10 @@ const DigestScrollTabs = (digest) => {
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
-          <Typography className={classes.heading}>Ingredients</Typography>
+          <Typography>Ingredients</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography variant="caption">
+          <Typography variant="subtitle2">
             {digest.ingredients.map((item) => (
               <span key={item.text}>{item.text}, </span>
             ))}
