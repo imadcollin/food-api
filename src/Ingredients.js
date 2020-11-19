@@ -34,7 +34,6 @@ const useStyles = makeStyles({
 });
 
 export default function StickyHeadTable({ digest }) {
-  console.log("from table ", digest.digest);
   const classes = useStyles();
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
