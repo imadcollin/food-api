@@ -36,7 +36,6 @@ const RecipesGrid = ({
   ingredients,
   digest,
 }) => {
-  console.log("lable from grid",label)
   const classes = useStyles();
   return (
     <div className={classes.root}>
@@ -50,13 +49,13 @@ const RecipesGrid = ({
 
           <Grid item xs container direction="column" spacing={2}>
             <Grid item>
-              <Typography variant="h6" gutterBottom>
+              <Typography variant="h6" gutterBottom color="primary" align="left">
                 {label}
               </Typography>
-              <Typography gutterBottom variant="subtitle1">
+              <Typography gutterBottom variant="subtitle1" align="left">
                 Source: {source}
               </Typography>
-              <Typography variant="subtitle1">
+              <Typography color="textSecondary" variant="subtitle1" align="left">
                 Diet Labels: {dietLabels}
               </Typography>
             </Grid>
@@ -64,13 +63,13 @@ const RecipesGrid = ({
 
           <Grid item xs container direction="column" spacing={2}>
             <Grid item>
-              <Typography variant="subtitle1" gutterBottom>
+              <Typography variant="subtitle1" color="secondary" align="right" gutterBottom>
                 Calories: {calories}
               </Typography>
-              <Typography gutterBottom variant="subtitle1">
-                Total Weight: {totalWeight}
+              <Typography gutterBottom variant="subtitle1" align="right">
+                 Weight: {totalWeight}
               </Typography>
-              <Typography variant="subtitle1">
+              <Typography variant="subtitle1" align="right">
                 Total Time: {totalTime}
               </Typography>
             </Grid>
