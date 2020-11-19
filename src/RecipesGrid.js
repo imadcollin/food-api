@@ -4,7 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import ButtonBase from "@material-ui/core/ButtonBase";
-
+import DigestScrollTabs from "./DigestTabs";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -33,7 +33,10 @@ const RecipesGrid = ({
   source,
   totalWeight,
   dietLabels,
+  ingredients,
+  digest,
 }) => {
+  console.log("lable from grid",label)
   const classes = useStyles();
   return (
     <div className={classes.root}>
@@ -72,6 +75,7 @@ const RecipesGrid = ({
               </Typography>
             </Grid>
           </Grid>
+          <DigestScrollTabs digest={digest} ingredients={ingredients} />
         </Grid>
       </Paper>
     </div>

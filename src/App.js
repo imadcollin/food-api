@@ -20,6 +20,11 @@ const App=()=> {
   }, []);
 
   const getRequest = async () => {
+    // const data=[]
+    // const recipe= { recipe: {label: "lable 2 ", count :2}}
+    // console.log(recipe)
+    // data.push(recipe); 
+    // setRecipes(data); 
     await axios
       .get(
         `https://api.edamam.com/search?q=${queryParam}&app_id=${config.Application_ID}&app_key=${config.Application_Keys}`,
@@ -28,6 +33,7 @@ const App=()=> {
       .then((res) => {
         const data = res.data;
         setRecipes(data.hits);
+        console.log(data.hits);
       });
   };
 
@@ -67,9 +73,12 @@ const App=()=> {
           calories={Math.round(recipe.recipe.calories * 10) / 10}
           totalWeight={Math.round(recipe.recipe.totalWeight * 10) / 10}
           dietLabels={recipe.recipe.dietLabels[0]}
+          ingredients={recipe.recipe.ingredients}
+          digest={recipe.recipe.digest}
+
         />
       ))}
-  
+
     </div>
   );
 }
